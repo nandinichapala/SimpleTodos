@@ -1,0 +1,34 @@
+
+.container {
+  background-color: #ffc2a0;
+  background-size: cover;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+}
+.box-container {
+  background-color: #ffffff;
+  width: 90%;
+  padding: 100px;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  color: #ff8542;
+  font-size: 40px;
+}
+.list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+} 
+
