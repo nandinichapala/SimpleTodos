@@ -58,17 +58,17 @@ class SimpleTodos extends Component {
   onClickAddNewTodo = async () => {
     const {titleInput} = this.state
     let taskTitle = titleInput
-    const text=titleInput.split(" ")
-   
+    const text = titleInput.split(' ')
+
     const count = parseInt(text.slice(-1))
 
     let countInput = 1
     if (count > countInput) {
       countInput = count
-      taskTitle = (text.slice(0,-1)).join(" ")
+      taskTitle = text.slice(0, -1).join(' ')
     }
 
-    for (let i = 0; i < countInput; i++) {
+    for (let i = 0; i < countInput; i += 1) {
       const newTodo = {
         id: uuidv4(),
         title: taskTitle,
