@@ -23,10 +23,10 @@ class TodoItem extends Component {
   }
 
   onClickSaveBtn = () => {
-    const {todoDetails,onUpdateTitle} = this.props
+    const {todoDetails, onUpdateTitle} = this.props
     const {updatedTitle} = this.state
     this.setState(prevState => ({editing: !prevState.editing}))
-    onUpdateTitle(updatedTitle,todoDetails.id)
+    onUpdateTitle(updatedTitle, todoDetails.id)
   }
 
   onChangeTitleText = event => {

@@ -58,13 +58,14 @@ class SimpleTodos extends Component {
   onClickAddNewTodo = async () => {
     const {titleInput} = this.state
     let taskTitle = titleInput
-
-    const count = parseInt(titleInput.charAt(titleInput.length - 1))
+    const text=titleInput.split(" ")
+   
+    const count = parseInt(text.slice(-1))
 
     let countInput = 1
-    if (Number.isInteger(count) && count > countInput) {
+    if (count > countInput) {
       countInput = count
-      taskTitle = titleInput.slice(0, -1)
+      taskTitle = (text.slice(0,-1)).join(" ")
     }
 
     for (let i = 0; i < countInput; i++) {
@@ -94,17 +95,15 @@ class SimpleTodos extends Component {
     this.setState({todosList: updatedList})
   }
 
-  onUpdateTitle = (updatedTitle,id) => {
-    const {todosList}=this.state
-    const updatedList=todosList.map((each)=>{
-      if (each.id===id){
-        return {...each,title:updatedTitle}
+  onUpdateTitle = (updatedTitle, id) => {
+    const {todosList} = this.state
+    const updatedList = todosList.map(each => {
+      if (each.id === id) {
+        return {...each, title: updatedTitle}
       }
       return each
-    }
-  )
-  this.setState({todosList:updatedList})
-  
+    })
+    this.setState({todosList: updatedList})
   }
 
   render() {
